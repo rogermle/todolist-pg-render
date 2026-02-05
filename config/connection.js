@@ -3,7 +3,7 @@ require("dotenv").config();
 
 // Connect to database
 const db = process.env.DB_URL
-  ? new Pool(process.env.DB_URL)
+  ? new Pool({ connectionString: process.env.DB_URL })
   : new Pool(
       {
         user: process.env.DB_USER,
